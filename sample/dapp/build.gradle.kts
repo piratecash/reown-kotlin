@@ -5,7 +5,6 @@ plugins {
     id(libs.plugins.kotlin.kapt.get().pluginId)
     alias(libs.plugins.google.services)
     alias(libs.plugins.firebase.crashlytics)
-    id("signing-config")
     alias(libs.plugins.compose.compiler)
 }
 
