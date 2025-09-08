@@ -125,9 +125,6 @@ dependencies {
     api(libs.bundles.retrofit)
     api(libs.beagle.logOkhttp)
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.messaging)
-
     testImplementation(libs.bundles.androidxTest)
     testImplementation(libs.robolectric)
     testImplementation(libs.json)
