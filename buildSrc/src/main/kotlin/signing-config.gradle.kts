@@ -1,10 +1,5 @@
 import com.android.build.gradle.BaseExtension
-import com.google.firebase.appdistribution.gradle.firebaseAppDistribution
 import java.util.Properties
-
-plugins {
-    id("com.google.firebase.appdistribution")
-}
 
 private val Project.secrets: Properties
     get() = rootProject.file("secrets.properties").let { secretsFile ->
@@ -49,11 +44,6 @@ project.extensions.configure(BaseExtension::class.java) {
             signingConfig = signingConfigs.getByName("upload")
             versionNameSuffix = System.getenv("GITHUB_RUN_NUMBER")?.let { ".$it" } ?: ""
             defaultConfig.versionCode = "$SAMPLE_VERSION_CODE${System.getenv("GITHUB_RUN_NUMBER") ?: ""}".toInt()
-            firebaseAppDistribution {
-                artifactType = "AAB"
-                serviceCredentialsFile = File(rootDir, "credentials.json").path
-                groups = "internal_testers"
-            }
         }
 
         // Firebase App Distribution
@@ -66,11 +56,6 @@ project.extensions.configure(BaseExtension::class.java) {
             proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
             versionNameSuffix = "${System.getenv("GITHUB_RUN_NUMBER")?.let { ".$it" } ?: ""}-internal"
             defaultConfig.versionCode = "$SAMPLE_VERSION_CODE${System.getenv("GITHUB_RUN_NUMBER") ?: ""}".toInt()
-            firebaseAppDistribution {
-                artifactType = "APK"
-                serviceCredentialsFile = File(rootDir, "credentials.json").path
-                groups = "internal_testers"
-            }
         }
 
         getByName("debug") {
@@ -78,11 +63,6 @@ project.extensions.configure(BaseExtension::class.java) {
             signingConfig = signingConfigs.getByName("debug")
             versionNameSuffix = "${System.getenv("GITHUB_RUN_NUMBER")?.let { ".$it" } ?: ""}-debug"
             defaultConfig.versionCode = "$SAMPLE_VERSION_CODE${System.getenv("GITHUB_RUN_NUMBER") ?: ""}".toInt()
-            firebaseAppDistribution {
-                artifactType = "APK"
-                serviceCredentialsFile = File(rootDir, "credentials.json").path
-                groups = "internal_testers"
-            }
         }
     }
 }

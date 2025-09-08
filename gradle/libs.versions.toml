@@ -40,7 +40,6 @@ beagle = "2.9.0"
 coinbase = "1.0.4"
 
 firebaseBOM = "33.3.0"
-firebaseAppDistribution = "5.0.0"
 
 androidxCore = "1.13.1"
 androidxAppCompat = "1.7.0"
