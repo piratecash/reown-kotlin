@@ -1,6 +1,5 @@
 plugins {
     `java-platform`
-    id("publish-module-java")
 }
 
 project.apply {

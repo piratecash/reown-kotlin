@@ -3,7 +3,6 @@ plugins {
     id(libs.plugins.kotlin.android.get().pluginId)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.paparazzi)
-    id("publish-module-android")
     id("jacoco-report")
     alias(libs.plugins.compose.compiler)
 }
