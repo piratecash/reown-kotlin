@@ -3,7 +3,6 @@ plugins {
     id(libs.plugins.kotlin.android.get().pluginId)
     alias(libs.plugins.sqlDelight)
     alias(libs.plugins.google.ksp)
-    id("publish-module-android")
     id("jacoco-report")
 }
 
@@ -124,9 +123,6 @@ dependencies {
     api(libs.bundles.kethereum)
     api(libs.bundles.retrofit)
     api(libs.beagle.logOkhttp)
-
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.messaging)
 
     testImplementation(libs.bundles.androidxTest)
     testImplementation(libs.robolectric)
