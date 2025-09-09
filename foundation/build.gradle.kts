@@ -5,7 +5,6 @@ plugins {
     id(libs.plugins.javaLibrary.get().pluginId)
     id(libs.plugins.kotlin.jvm.get().pluginId)
     alias(libs.plugins.google.ksp)
-    id("publish-module-java")
 }
 
 project.apply {
