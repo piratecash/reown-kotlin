@@ -3,7 +3,6 @@ plugins {
     id(libs.plugins.kotlin.android.get().pluginId)
     alias(libs.plugins.sqlDelight)
     alias(libs.plugins.google.ksp)
-    id("publish-module-android")
     id("jacoco-report")
 }
 
